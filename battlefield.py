@@ -9,8 +9,7 @@ class Battlefield:
     def __init__(self):
         self.fleet = Fleet()
         self.herd = Herd()
-        
-    
+
     def run_game(self):
         pass
    
@@ -21,29 +20,51 @@ class Battlefield:
     def battle(self):
         self.dino
 
-    def dino_turn(self, dinosaur):
-        self.dino_picks[0]
+    def dino_turn(self):
+        self.dinosaur = input(f"Enter 1 for {Dinosaur.name[0]}, 2 for {Dinosaur.name[1]}, 3 for {Dinosaur.name[2]}, 4 for {Dinosaur.name[3]}")
+        if self.dinosaur == "1":
+            print(f"Your dinosaur is {Dinosaur.name[0]}")
+        elif self.dinosaur == "2":
+            print(f"Your dinosaur is {Dinosaur.name[1]}")
+        elif self.dinosaur == "3":
+            print(f"Your dinosaur is {Dinosaur.name[2]}")
+        elif self.dinosaur == "4":
+            print(f"Your dinosaur is {Dinosaur.name[3]}")  
+        else:
+            print("No Dinosaur selected! Please enter a number 1-4 to select your dinosaur for battle!")  
 
-    def robo_turn(self, robot):
-        pass
+
+    def robo_turn(self):
+        import random
+        self.robot = []
+        self.robot = input(int(random.randint(0,3)))
+        if self.robot == 0:
+            print(f"Your oponent is {Robot.name[0]}")            
+        elif self.robot == 1:
+            print(f"Your oponent is {Robot.name[1]}")
+        elif self.robot == 2:
+            print(f"Your oponent is {Robot.name[2]}")
+        elif self.robot == 3:
+            print(f"Your oponent is {Robot.name[3]}") 
+        else:
+            print("No apponent")
 
     def show_dino_oponent_options(self):
-        import random
-        self.dino_picks = Dinosaur[0]
-        for i in range(3):
-            input = int(input(random.randint(0,3)))
-            self.dino_picks.append(self.dino_picks)
-        print(f"{self.dino_picks[0]} This is your team")
+        dino_picks = Herd
+        dino_oponents = 3
+        for dinosaur in self.fleet:
+            dino_picks +=  dinosaur.pick
+            dino_oponents += 1
+        print(f"These are your team {dino_picks[0]}")
 
         
     def show_robo_oponent_options(self):
-        import random
-        self.robot_picks = Robot[0]
-        for i in range(3):
-            input = int(input(random.randint(0,3)))
-            self.robot_picks.append(self.robot_picks)
-        
-        print(f"{self.robot_picks[0]} This is your oponent! Good Luck!")
+        robot_picks = Fleet
+        robot_oponents = 3
+        for robot in self.herd:
+            robot_picks +=  robot.pick
+            robot_oponents += 1
+        print(f"These are your oponents! {robot_picks[0]}  Good Luck!")
 
     def display_winners(self):
         pass
