@@ -11,33 +11,33 @@ class Battlefield:
         self.herd = Herd()
         self.dinosaur = Dinosaur[0]
         self.robot = Robot[0]
-        self.damage  = damage[0]
-        self.die = die()
+       
 
     def run_game(self):
         pass
    
     def display_welcom(self):
-        print(f"Welcome to the  Dinosaurs vs Robots Battlefield!Do You Have What it Takes to survive?")
+        print("Welcome to the  Dinosaurs vs Robots Battlefield!Do You Have What it Takes to survive?")
+        else:
+            
         
     
     def battle(self):
         self.battle_begins = input("Are you ready for the ultimate game of survival? If so enter yes to begin the war for survival of the fittest!")
         if self.battle_begins == "yes":
             print("Let the battle begin")
-            print(f"{self.dinosaur[0]} is your fighter")
+            print(f"{self.dinosaur.__name__[0]} is your fighter")
             print(f"Your Teams health is {self.dinosaur.health[0]}") 
             while self.battle_begins == "yes":
-                self.run_game()
-            while(self.show_dino_oponent_options()and self.show_robo_oponent_options()):
+                self.show_dino_oponent_options()and self.show_robo_oponent_options()
                 self.dinosaur.attack(self.robot)
                 self.robot.health - 10
                 self.robot.attack(self.dinosaur)
                 self.dinosaur.health - 10
                 if self.robot.health == 50:
-                    print("Your oponent {robot[0]} is fading fast")
+                    print("Your oponent {robot.name[0]} is fading fast")
                 elif self.robot.health == 50:
-                    print("Your oponent {robot[0]} is fading fast")
+                    print("Your oponent {robot.name[0]} is fading fast")
                 elif self.dinosaur.health == 0:
                     print("{dinosaur[0]} has died")
                 elif self.robot.health == 0:
